@@ -3,14 +3,11 @@
 - title: Home
   url: /
 
-- title: Docs
-  url: /docs/installation/
+- title: Lessons
+  url: /lessons/
 
 - title: Blog
   url: /blog/
-
-- title: Changelog
-  url: /changelog-timeline/
 
 - title: Contact
   url: /contact/
