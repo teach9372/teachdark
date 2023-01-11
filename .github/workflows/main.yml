@@ -11,9 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#This task checks out the git repository so it can be used by your action
       - uses: actions/checkout@v2
-#This task pushes the build to the Front_End repository
        - name: Push generated webpage to another repository
           uses: nkoppel/push-files-to-another-repository@1.1.0
           env:
