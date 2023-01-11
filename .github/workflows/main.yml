@@ -5,8 +5,6 @@ name: jekyll CI
 on:
   push:
     branches: [ main ]
-
-#This is the list of tasks that the action will execute.  
 #They will be executed in order in an Ubuntu environment
 jobs:
   build:
@@ -15,9 +13,6 @@ jobs:
     steps:
       #This task checks out the git repository so it can be used by your action
       - uses: actions/checkout@v2
-        with:
-          submodules: false 
-          fetch-depth: 1   
       #This task pushes the build to the Front_End repository
        - name: Push generated webpage to another repository
           uses: nkoppel/push-files-to-another-repository@1.1.0
