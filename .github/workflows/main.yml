@@ -4,7 +4,7 @@ name: jekyll CI
 #This makes the action trigger on any push to the master branch of the repository
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 #This is the list of tasks that the action will execute.  
 #They will be executed in order in an Ubuntu environment
