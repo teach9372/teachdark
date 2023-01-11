@@ -12,11 +12,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-       - name: Push generated webpage to another repository
-          uses: nkoppel/push-files-to-another-repository@1.1.0
-          env:
+        with:
+          submodules: true 
+          fetch-depth: 1   
+      - name: Push generated webpage to another repository
+        uses: nkoppel/push-files-to-another-repository@1.1.0
+        env:
             API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-          with:
+        with:
             source-files: './_site'
             destination-username: 'teach9372'
             destination-repository: 'teach9372.github.io'
