@@ -1,0 +1,28 @@
+#Name of action
+name: jekyll CI
+
+#This makes the action trigger on any push to the master branch of the repository
+on:
+  push:
+    branches: [ master ]
+
+#This is the list of tasks that the action will execute.  
+#They will be executed in order in an Ubuntu environment
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      #This task checks out the git repository so it can be used by your action
+      - uses: actions/checkout@v2
+        with:
+          submodules: false 
+          fetch-depth: 1   
+      #This task pushes the build to the Front_End repository
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: teach9372/teach9372.github.io
+          publish_branch: master
+          publish_dir: ./_site
